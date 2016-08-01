@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Miapp\Contracts\UserRepositoryInterface;
-use App\Miapp\Repository\UserRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,6 +14,7 @@ class UserController extends Controller
     public $user;
     /**
      * UserController constructor.
+     * @var $user UserRepositoryInterface.
      */
     public function __construct(UserRepositoryInterface $user)
     {

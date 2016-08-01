@@ -44,7 +44,7 @@ $app->singleton(
 
 $app->bind(
     \App\Miapp\Contracts\UserRepositoryInterface::class,
-    \App\Miapp\Repository\UserRepository::class);
+    \App\Miapp\Repository\DummyUserRepository::class);
 
 /*
 |--------------------------------------------------------------------------

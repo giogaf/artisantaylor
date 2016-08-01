@@ -3,21 +3,19 @@
  * Created by giogaf.
  * User: gg
  * Date: 1/08/16
- * Time: 02:32 PM
+ * Time: 04:24 PM
  */
 
 namespace App\Miapp\Repository;
 
 
 use App\Miapp\Contracts\UserRepositoryInterface;
-use App\User;
 
-class UserRepository implements UserRepositoryInterface
+class DummyUserRepository implements UserRepositoryInterface
 {
     public function all()
     {
-        //dd(User::all());
-        return User::all();
+        return collect(array(['password'=>bcrypt('gg1111'),'email'=>'ga@ga.com']));
     }
 
 }
