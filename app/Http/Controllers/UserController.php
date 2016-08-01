@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Miapp\Contracts\UserRepositoryInterface;
 use App\Miapp\Repository\UserRepository;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class UserController extends Controller
     /**
      * UserController constructor.
      */
-    public function __construct(UserRepository $user)
+    public function __construct(UserRepositoryInterface $user)
     {
         $this->user= $user;
     }
@@ -28,10 +29,10 @@ class UserController extends Controller
     public function index()
     {
 
-        $us=$this->user->all()->toArray();
-        dd($us[0]);
+        $users=$this->user->all()->toArray();
+     //   dd($us[0]);
 
-        return view('welcome');
+        return view('welcome',compact('users'));
     }
 
     /**

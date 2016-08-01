@@ -41,6 +41,11 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+$app->bind(
+    \App\Miapp\Contracts\UserRepositoryInterface::class,
+    \App\Miapp\Repository\UserRepository::class);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
