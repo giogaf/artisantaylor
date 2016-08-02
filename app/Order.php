@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+readme
 class Order extends Model
 {
     //
@@ -14,3 +14,4 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
 }
+re
