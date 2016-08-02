@@ -20,4 +20,9 @@ class UserRepository implements UserRepositoryInterface
         return User::all();
     }
 
+    public function find($id)
+    {
+        return User::find($id);
+    }
+
 }

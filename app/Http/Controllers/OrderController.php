@@ -2,25 +2,35 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Miapp\Contracts\UserRepositoryInterface;
+use App\Miapp\Contracts\OrdersRepositoryInterface;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-
-class UserController extends Controller
+use App\User;
+class OrderController extends Controller
 {
-    public $user;
+
+    public $orders;
     /**
-     * UserController constructor.
-     * @var $user UserRepositoryInterface.
+     * OrderController constructor.
      */
-    public function __construct(UserRepositoryInterface $user)
+    public function __construct(OrdersRepositoryInterface $o)
     {
-        $this->user= $user;
+        $this->orders=$o;
     }
 
+    public function byUser($id){
+        $u=User::find($id);
+        $user=$u->orders()->get();
+        dd($user);
+        if($user){
+            dd($this->orders->getByUser($user));
+        }
+        else{
+            echo 'no encontrado';
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,11 +38,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
-        $users=$this->user->all()->toArray();
-     //   dd($us[0]);
-
-        return view('welcome',compact('users'));
+        //
     }
 
     /**

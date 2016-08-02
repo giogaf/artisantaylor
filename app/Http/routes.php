@@ -12,3 +12,4 @@
 */
 
 Route::get('/', ['uses'=>'UserController@index']);
+Route::get('/order/{id}', ['uses'=>'OrderController@byUser']);

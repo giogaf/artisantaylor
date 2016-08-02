@@ -44,8 +44,12 @@ $app->singleton(
 
 $app->bind(
     \App\Miapp\Contracts\UserRepositoryInterface::class,
-    \App\Miapp\Repository\DummyUserRepository::class);
-
+    \App\Miapp\Repository\UserRepository::class
+);
+$app->bind(
+    \App\Miapp\Contracts\OrdersRepositoryInterface::class,
+    \App\Miapp\Repository\OrdersRepository::class
+);
 /*
 |--------------------------------------------------------------------------
 | Return The Application
