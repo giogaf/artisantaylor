@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $this->user= $user;
     }
-
+ro
     /**
      * Display a listing of the resource.
      *
